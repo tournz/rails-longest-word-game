@@ -1,0 +1,14 @@
+<h1>Result</h1>
+<h3>Score:</h3>
+<%= @results[:score] %>
+<h3>Message:
+  <%if @results[:message] == 'Not an English word' %>
+    <%= "Sorry but #{@word} is not an English word" %>
+  <% elsif @results[:message] == 'Not in the grid' %>
+    <%= "Sorry but #{@word} can't be built out of #{@letters}" %>
+  <% else %>
+    <%= "Congrats, #{@word} is a valid English word!" %>
+  <% end %>
+</h3>
+
+<h6><%= link_to "Play again", new_path %></h6>
